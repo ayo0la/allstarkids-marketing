@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Facebook, Instagram, Music2, MapPin, Phone, Clock, Mail } from "lucide-react";
 
 const navLinks = [
   { href: "/",         label: "Home" },
@@ -11,9 +12,9 @@ const navLinks = [
 ];
 
 const social = [
-  { href: "https://www.facebook.com/p/All-Star-Kids-Academy-61565962763578/", label: "Facebook",  icon: "f" },
-  { href: "https://www.instagram.com/allstarkidsacademy.ga/", label: "Instagram", icon: "ig" },
-  { href: "https://www.tiktok.com/@allstarkidsacademyga", label: "TikTok",    icon: "tt" },
+  { href: "https://www.facebook.com/p/All-Star-Kids-Academy-61565962763578/", label: "Facebook",  Icon: Facebook },
+  { href: "https://www.instagram.com/allstarkidsacademy.ga/",                 label: "Instagram", Icon: Instagram },
+  { href: "https://www.tiktok.com/@allstarkidsacademyga",                     label: "TikTok",    Icon: Music2 },
 ];
 
 export default function Footer() {
@@ -29,14 +30,16 @@ export default function Footer() {
             Where every child becomes a star.
           </p>
           <div className="flex gap-3 mt-5">
-            {social.map((s) => (
+            {social.map(({ href, label, Icon }) => (
               <a
-                key={s.label}
-                href={s.href}
-                aria-label={s.label}
-                className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-xs font-bold transition-colors"
+                key={label}
+                href={href}
+                aria-label={label}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
               >
-                {s.icon}
+                <Icon size={16} />
               </a>
             ))}
           </div>
@@ -59,11 +62,31 @@ export default function Footer() {
         {/* Col 3: Contact */}
         <div>
           <p className="text-xs font-bold uppercase tracking-widest text-blue-400 mb-4">Contact</p>
-          <ul className="space-y-3 text-sm text-blue-200">
-            <li>📍 4518 Covington Hwy<br />Decatur, GA 30035</li>
-            <li>📞 <a href="tel:4042842327" className="hover:text-white transition-colors">(404) 284-2327</a></li>
-            <li>🕐 Mon–Fri: 6:00 AM – 6:30 PM</li>
-            <li>✉️ <a href="mailto:info@allstarkidsacademyga.com" className="hover:text-white transition-colors">info@allstarkidsacademyga.com</a></li>
+          <ul className="space-y-4 text-sm text-blue-200">
+            <li className="flex items-start gap-3">
+              <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <MapPin size={15} />
+              </div>
+              <span>4518 Covington Hwy<br />Decatur, GA 30035</span>
+            </li>
+            <li className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0">
+                <Phone size={15} />
+              </div>
+              <a href="tel:4042842327" className="hover:text-white transition-colors">(404) 284-2327</a>
+            </li>
+            <li className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0">
+                <Clock size={15} />
+              </div>
+              <span>Mon–Fri: 6:00 AM – 6:30 PM</span>
+            </li>
+            <li className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0">
+                <Mail size={15} />
+              </div>
+              <a href="mailto:info@allstarkidsacademyga.com" className="hover:text-white transition-colors">info@allstarkidsacademyga.com</a>
+            </li>
           </ul>
         </div>
       </div>
