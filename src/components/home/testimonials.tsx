@@ -1,6 +1,7 @@
 "use client";
 
 import useEmblaCarousel from "embla-carousel-react";
+import { Star } from "lucide-react";
 import { testimonials } from "@/data/testimonials";
 
 export default function Testimonials() {
@@ -18,7 +19,11 @@ export default function Testimonials() {
             {testimonials.map((t) => (
               <div key={t.id} className="flex-[0_0_100%] min-w-0 px-4">
                 <div className="bg-white rounded-2xl p-8 shadow-sm text-center">
-                  <p className="text-4xl mb-5">⭐⭐⭐⭐⭐</p>
+                  <div className="flex justify-center gap-1 mb-5">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star key={i} size={20} fill="#fbbf24" color="#fbbf24" />
+                    ))}
+                  </div>
                   <blockquote className="text-lg text-slate-700 font-medium leading-relaxed mb-5 italic">
                     &ldquo;{t.quote}&rdquo;
                   </blockquote>

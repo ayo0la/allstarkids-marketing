@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Button } from "@heroui/react";
 
 export default function EnrollCta() {
   return (
@@ -10,12 +11,13 @@ export default function EnrollCta() {
         <p className="text-blue-200 text-lg mb-8">
           Our digital enrollment form takes about 10 minutes. Start your child's journey today.
         </p>
-        <Link
+        <Button
+          as={Link}
           href="/enroll"
-          className="btn-shimmer inline-block text-blue-950 font-black text-lg px-10 py-4 rounded-2xl shadow-lg shadow-yellow-400/30 hover:scale-105 transition-transform"
+          className="btn-shimmer text-blue-950 font-black text-lg px-10 py-4 rounded-2xl shadow-lg shadow-yellow-400/30 hover:scale-105 transition-transform h-auto"
         >
           Start Enrollment →
-        </Link>
+        </Button>
         <p className="text-blue-400/60 text-sm mt-5">
           Questions? Call us at{" "}
           <a href="tel:4042842327" className="hover:text-blue-200 transition-colors">

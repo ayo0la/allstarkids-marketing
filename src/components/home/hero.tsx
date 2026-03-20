@@ -1,4 +1,12 @@
 import Link from "next/link";
+import { BadgeCheck, Star, Lock } from "lucide-react";
+import { Button } from "@heroui/react";
+
+const badges = [
+  { icon: BadgeCheck, label: "Licensed & Accredited" },
+  { icon: Star,       label: "Georgia Pre-K Provider", gold: true },
+  { icon: Lock,       label: "Secure Enrollment" },
+];
 
 export default function Hero() {
   return (
@@ -20,24 +28,34 @@ export default function Hero() {
             Decatur's premier early learning academy — providing loving, structured care and education from infancy through age 12.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
-            <Link
+            <Button
+              as={Link}
               href="/enroll"
-              className="btn-shimmer text-blue-950 font-black text-base px-8 py-4 rounded-2xl shadow-lg shadow-yellow-300/40 hover:scale-105 transition-transform text-center"
+              className="btn-shimmer text-blue-950 font-black text-base px-8 py-4 rounded-2xl shadow-lg shadow-yellow-300/40 hover:scale-105 transition-transform text-center h-auto"
             >
               Start Enrollment →
-            </Link>
-            <Link
+            </Button>
+            <Button
+              as={Link}
               href="/programs"
-              className="border-2 border-[#0a1628] text-[#0a1628] font-bold text-base px-8 py-4 rounded-2xl hover:bg-[#0a1628] hover:text-white transition-colors text-center"
+              className="border-2 border-[#0a1628] text-[#0a1628] font-bold text-base px-8 py-4 rounded-2xl hover:bg-[#0a1628] hover:text-white transition-colors text-center h-auto bg-transparent"
             >
               Explore Programs
-            </Link>
+            </Button>
           </div>
           {/* Trust badges */}
           <div className="flex flex-wrap gap-2 mt-8">
-            {["🏫 Licensed & Accredited", "⭐ Georgia Pre-K Provider", "🔒 Secure Enrollment"].map((b) => (
-              <span key={b} className="text-xs font-semibold text-slate-500 bg-white border border-slate-200 px-3 py-1.5 rounded-full shadow-sm">
-                {b}
+            {badges.map(({ icon: Icon, label, gold }) => (
+              <span
+                key={label}
+                className={`inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full border shadow-sm ${
+                  gold
+                    ? "bg-yellow-50 border-yellow-200 text-yellow-800"
+                    : "bg-white border-slate-200 text-slate-500"
+                }`}
+              >
+                <Icon size={13} strokeWidth={2.5} />
+                {label}
               </span>
             ))}
           </div>
