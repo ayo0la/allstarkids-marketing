@@ -1,8 +1,20 @@
 import ContactForm from "@/components/contact-form";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 export const metadata = {
   title: "Contact | All Star Kids Academy",
   description: "Get in touch with All Star Kids Academy. Visit us at 4518 Covington Hwy, Decatur, GA 30035 or call (404) 284-2327.",
+};
+
+const iconContainerStyle: React.CSSProperties = {
+  width: 34,
+  height: 34,
+  borderRadius: 8,
+  background: "rgba(10,22,40,0.06)",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  flexShrink: 0,
 };
 
 export default function ContactPage() {
@@ -22,28 +34,36 @@ export default function ContactPage() {
           <h2 className="text-2xl font-black text-[#0a1628] mb-6">Visit or Call</h2>
           <ul className="space-y-5 text-slate-600">
             <li className="flex gap-3">
-              <span className="text-2xl">📍</span>
+              <div style={iconContainerStyle}>
+                <MapPin size={16} color="#0a1628" strokeWidth={2} />
+              </div>
               <div>
                 <p className="font-bold text-[#0a1628]">Address</p>
                 <p className="text-sm">4518 Covington Hwy<br />Decatur, GA 30035</p>
               </div>
             </li>
             <li className="flex gap-3">
-              <span className="text-2xl">📞</span>
+              <div style={iconContainerStyle}>
+                <Phone size={16} color="#0a1628" strokeWidth={2} />
+              </div>
               <div>
                 <p className="font-bold text-[#0a1628]">Phone</p>
                 <a href="tel:4042842327" className="text-sm hover:text-[#fbbf24] transition-colors">(404) 284-2327</a>
               </div>
             </li>
             <li className="flex gap-3">
-              <span className="text-2xl">✉️</span>
+              <div style={iconContainerStyle}>
+                <Mail size={16} color="#0a1628" strokeWidth={2} />
+              </div>
               <div>
                 <p className="font-bold text-[#0a1628]">Email</p>
                 <a href="mailto:info@allstarkidsacademyga.com" className="text-sm hover:text-[#fbbf24] transition-colors">info@allstarkidsacademyga.com</a>
               </div>
             </li>
             <li className="flex gap-3">
-              <span className="text-2xl">🕐</span>
+              <div style={iconContainerStyle}>
+                <Clock size={16} color="#0a1628" strokeWidth={2} />
+              </div>
               <div>
                 <p className="font-bold text-[#0a1628]">Hours</p>
                 <p className="text-sm">Monday – Friday: 6:00 AM – 6:30 PM</p>

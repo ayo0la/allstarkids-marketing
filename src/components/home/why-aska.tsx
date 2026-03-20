@@ -1,3 +1,5 @@
+"use client";
+
 import { GraduationCap, Shield, Award } from "lucide-react";
 import { Card, CardBody } from "@heroui/react";
 

@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { BadgeCheck, Star, Lock } from "lucide-react";
 import { Button } from "@heroui/react";

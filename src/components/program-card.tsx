@@ -1,3 +1,5 @@
+"use client";
+
 import { Card, CardBody } from "@heroui/react";
 import { Baby, Palette, BookOpen, School, Bird, Star, type LucideIcon } from "lucide-react";
 import Link from "next/link";

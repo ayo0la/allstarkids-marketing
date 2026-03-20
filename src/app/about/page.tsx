@@ -1,5 +1,6 @@
 import { staff } from "@/data/staff";
 import Link from "next/link";
+import { School, Heart, Handshake, Sprout, Medal } from "lucide-react";
 
 export const metadata = {
   title: "About | All Star Kids Academy",
@@ -7,10 +8,10 @@ export const metadata = {
 };
 
 const values = [
-  { icon: "❤️", title: "Child-Centered",   body: "Every decision we make puts the child's development, safety, and happiness first." },
-  { icon: "🤝", title: "Family Partnership", body: "We see ourselves as an extension of your family, keeping communication open and honest." },
-  { icon: "🌱", title: "Growth Mindset",    body: "We believe every child can grow and succeed with the right encouragement and environment." },
-  { icon: "🏅", title: "Excellence",        body: "From our curriculum to our facilities, we hold ourselves to the highest standards." },
+  { Icon: Heart,      accentColor: "#f43f5e", title: "Child-Centered",   body: "Every decision we make puts the child's development, safety, and happiness first." },
+  { Icon: Handshake,  accentColor: "#6366f1", title: "Family Partnership", body: "We see ourselves as an extension of your family, keeping communication open and honest." },
+  { Icon: Sprout,     accentColor: "#22c55e", title: "Growth Mindset",    body: "We believe every child can grow and succeed with the right encouragement and environment." },
+  { Icon: Medal,      accentColor: "#f97316", title: "Excellence",        body: "From our curriculum to our facilities, we hold ourselves to the highest standards." },
 ];
 
 export default function AboutPage() {
@@ -38,7 +39,7 @@ export default function AboutPage() {
           </div>
           {/* Placeholder visual */}
           <div className="animate-fade-in-up delay-200 bg-[#e8f0fe] rounded-3xl aspect-video flex items-center justify-center">
-            <span className="text-6xl animate-float">🏫</span>
+            <School size={64} strokeWidth={1.5} className="text-[#0a1628]/60 animate-float-slow" />
           </div>
         </div>
       </section>
@@ -48,11 +49,24 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-black text-[#0a1628] mb-10 text-center">Our Values</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
-            {values.map((v, i) => (
-              <div key={v.title} className={`bg-white rounded-2xl p-6 shadow-sm animate-fade-in-up delay-${(i + 1) * 100}`}>
-                <div className="text-3xl mb-3">{v.icon}</div>
-                <h3 className="font-extrabold text-[#0a1628] mb-2">{v.title}</h3>
-                <p className="text-sm text-slate-500 leading-relaxed">{v.body}</p>
+            {values.map(({ Icon, accentColor, title, body }, i) => (
+              <div key={title} className={`bg-white rounded-2xl p-6 shadow-sm animate-fade-in-up delay-${(i + 1) * 100}`}>
+                <div
+                  style={{
+                    width: 40,
+                    height: 40,
+                    borderRadius: 10,
+                    background: `${accentColor}18`,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginBottom: 12,
+                  }}
+                >
+                  <Icon size={20} color={accentColor} strokeWidth={2} />
+                </div>
+                <h3 className="font-extrabold text-[#0a1628] mb-2">{title}</h3>
+                <p className="text-sm text-slate-500 leading-relaxed">{body}</p>
               </div>
             ))}
           </div>
