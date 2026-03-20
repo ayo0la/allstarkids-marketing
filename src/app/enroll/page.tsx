@@ -1,8 +1,9 @@
 import { redirect } from "next/navigation";
 
-// Redirects to the enrollment portal subdomain.
-// Until enroll.allstarkidsacademyga.com is live, update the URL below
-// to the Vercel preview URL of the enrollment portal.
+// Redirects to the enrollment portal.
+// ENROLL_URL env var controls the target:
+//   - Now:  https://allstarkids-platform.vercel.app  (Vercel project URL)
+//   - Later: https://enroll.allstarkidsacademyga.com  (once DNS A record is added)
 export default function EnrollPage() {
-  redirect("https://enroll.allstarkidsacademyga.com");
+  redirect(process.env.ENROLL_URL ?? "https://allstarkids-platform.vercel.app");
 }
