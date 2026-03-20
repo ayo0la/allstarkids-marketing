@@ -4,8 +4,8 @@ export type Program = {
   ages: string;
   description: string;
   schedule: string;
-  color: string;       // Tailwind bg class for card accent
-  iconEmoji: string;
+  iconName: string;
+  accentColor: string;
 };
 
 export const programs: Program[] = [
@@ -16,8 +16,8 @@ export const programs: Program[] = [
     description:
       "A nurturing, sensory-rich environment where our youngest learners develop foundational social and motor skills through play, music, and guided exploration.",
     schedule: "Mon–Fri, Hours: TBD",
-    color: "bg-rose-50 border-rose-200",
-    iconEmoji: "🍼",
+    iconName: "Baby",
+    accentColor: "#f43f5e",
   },
   {
     id: "preschool",
@@ -26,8 +26,8 @@ export const programs: Program[] = [
     description:
       "Structured creative play, early literacy, and social development. Children build confidence and curiosity in a warm, supportive classroom.",
     schedule: "Mon–Fri, Hours: TBD",
-    color: "bg-orange-50 border-orange-200",
-    iconEmoji: "🎨",
+    iconName: "Palette",
+    accentColor: "#f97316",
   },
   {
     id: "pre-k",
@@ -36,8 +36,8 @@ export const programs: Program[] = [
     description:
       "State-funded Georgia Pre-K program. School-readiness focus: letters, numbers, social skills, and hands-on learning to prepare children for kindergarten.",
     schedule: "Mon–Fri, Hours: TBD",
-    color: "bg-blue-50 border-blue-200",
-    iconEmoji: "📚",
+    iconName: "BookOpen",
+    accentColor: "#6366f1",
   },
   {
     id: "after-school",
@@ -46,8 +46,8 @@ export const programs: Program[] = [
     description:
       "Safe, structured after-school care with homework help, enrichment activities, and supervised free play. Pickup from local elementary schools available.",
     schedule: "Mon–Fri, Hours: TBD",
-    color: "bg-purple-50 border-purple-200",
-    iconEmoji: "🏫",
+    iconName: "School",
+    accentColor: "#8b5cf6",
   },
   {
     id: "summer-eaglets",
@@ -56,8 +56,8 @@ export const programs: Program[] = [
     description:
       "A fun-filled summer of themed weeks, field trips, arts & crafts, sports, and STEM activities. Perfect for younger campers ready for adventure.",
     schedule: "Summer seasonal, Hours: TBD",
-    color: "bg-yellow-50 border-yellow-200",
-    iconEmoji: "🦅",
+    iconName: "Bird",
+    accentColor: "#eab308",
   },
   {
     id: "summer-eagles",
@@ -66,7 +66,7 @@ export const programs: Program[] = [
     description:
       "Leadership, teamwork, and exploration for older campers. Includes tech projects, athletics, excursions, and community service activities.",
     schedule: "Summer seasonal, Hours: TBD",
-    color: "bg-green-50 border-green-200",
-    iconEmoji: "⭐",
+    iconName: "Star",
+    accentColor: "#22c55e",
   },
 ];
