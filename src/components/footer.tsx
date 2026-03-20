@@ -11,9 +11,9 @@ const navLinks = [
 ];
 
 const social = [
-  { href: "#", label: "Facebook",  icon: "f" },
-  { href: "#", label: "Instagram", icon: "ig" },
-  { href: "#", label: "TikTok",    icon: "tt" },
+  { href: "https://www.facebook.com/p/All-Star-Kids-Academy-61565962763578/", label: "Facebook",  icon: "f" },
+  { href: "https://www.instagram.com/allstarkidsacademy.ga/", label: "Instagram", icon: "ig" },
+  { href: "https://www.tiktok.com/@allstarkidsacademyga", label: "TikTok",    icon: "tt" },
 ];
 
 export default function Footer() {
